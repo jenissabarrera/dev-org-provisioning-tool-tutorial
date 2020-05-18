@@ -1,7 +1,5 @@
 {
-    "client_id":"[Required] Genesys Cloud client id", 
-    "client_secret":"[Required] Genesys Cloud client secret",
-
+   
     "location": {
         "name":"[Required] Assign any location name",
         "number":"[Required] Please make sure to follow the number format E.164 e.g: +12345678911", 
