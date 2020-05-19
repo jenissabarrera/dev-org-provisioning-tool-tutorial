@@ -13,8 +13,8 @@ let locationInfo = null;
 let siteId = null;
 
 // Get client credentials from environment variables
-const CLIENT_ID = inputTemplate.client_id;
-const CLIENT_SECRET = inputTemplate.client_secret;
+const CLIENT_ID = process.env.GENESYS_CLIENT_ID;
+const CLIENT_SECRET = process.env.GENESYS_CLIENT_SECRET;
 
 // Authenticate with genesys cloud
 client.loginClientCredentialsGrant(CLIENT_ID, CLIENT_SECRET)
