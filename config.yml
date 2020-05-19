@@ -7,7 +7,7 @@ categories:
 steps:
 - title: Introduction
   content: |
-    This tutorial walks through the steps on how to implement BYOC Cloud in Genesys Cloud using [Purecloud Platform API](https://developer.mypurecloud.com/api/rest/client-libraries/index.html). In order for BYOC Cloud to work with a third-party carrier, the carrier must:
+    This tutorial walks through the steps on how to implement BYOC Cloud in Genesys Cloud using [Purecloud Platform API](/rest/client-libraries/index.html). In order for BYOC Cloud to work with a third-party carrier, the carrier must:
     
     * Be SIP-compliant
     * Support the UDP or TCP trunk transport protocol
@@ -39,6 +39,8 @@ steps:
 - title: Create Site
   content: |
     To create a new site, two pieces of information is needed. One is the location information, which is saved in a global variable and second is a default edge group which is found in PureCloud Admin > Telephony > Edge Groups.
+
+    Also, take note that the edges in this site is set to automatically update everyday from 2:00AM to 5:00AM, this window time is a default value but it can be set to a specific schedule if necessary. To know more about the automatic edge update visit [Schedule automatic updates for the Edge software](https://help.mypurecloud.com/articles/schedule-automatic-updates-edge-software/). 
 
     Get the default edge group by calling [getTelephonyProvidersEdgesSites()](https://developer.mypurecloud.com/api/rest/client-libraries/javascript/TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSites) function and look for "PureCloud Voice – AWS". Save the returned data and proceed to creating a new site with [postTelephonyProvidersEdgesSites()](https://developer.mypurecloud.com/api/rest/client-libraries/javascript/TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSites) function. Both functions are under telephony providers edge API.
 
