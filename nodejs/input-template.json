@@ -1,34 +1,28 @@
 {
-    "client_id":"264f2b22-1a6e-4568-8cab-48ce5210fb0f",
-    "client_secret":"RaBjmRQ1bFZbdEz0thIkqput7Yjj4OgcpcM8rlqSFrU",
-
-    "location": {
-        "name":"Russ' Location",
-        "number":"+639999445756", 
-        "street1":"Manggahan st, Bagumbayan",
-        "city":"Quezon city",
-        "state":"Manila",
-        "zipcode":"0111",
-        "country":"PH",
-        "countryFullName":"Philippines"
+ "location": {
+        "name":"[Required] Assign any location name",
+        "number":"[Required] Please make sure to follow the number format E.164 e.g: +12345678911", 
+        "street1":"[Required]",
+        "city":"[Required]",
+        "state":"",
+        "zipcode":"[Required]",
+        "country":"[Required] Alpha-2 code format",
+        "countryFullName":"[Required]"
     },
 
     "site": {
-        "name":"Russ' try Location",
-        "timeZone":"America/New_York"
+        "name":"[Required] Assign any site name",
+        "timeZone":"[Required] ex: America/New_York"
     },
 
     "sipTrunk": {
-        "externalTrunkName":"Russ' tutorial sample",
-        "sipServers":"devorgsiptrunk.pstn.twilio.com",
-        "realm":"sip.twilio.com",
-        "password":"DevOrg12345!",
-        "address":"+15804405546",
-        "callingName":"DOPTName1",
-        "userName":"doptCredential1",
-        "instance": [
-            "54.172.60.0/23", "34.203.250.0/23", "54.244.51.0/24", "54.65.63.192/26", 
-            "3.112.80.0/24", "54.169.127.128/26", "3.1.77.0/24"
-        ]
+        "externalTrunkName" :"[Required] User's chosen trunk name",
+        "SipServers":"[Required] The Sip Servers or Termination URI is unique within user's Genesys Cloud Organization's region. The termination URI will be used by the 3rd party PBX or Carrier to direct SIP traffic to Genesys Cloud",
+        "realm":"Realm must match the username and password to be sent",
+        "password":"Password to send when trunk is challenged for the realm",
+        "address":"[Required] Specific overriding caller ID adddress to use as the outgoing origination address. May be a URI or raw phone number",
+        "callingName":"Specific overriding caller ID name to use as the outgoing origination address. May be a URI or raw phone number",
+        "userName":"User name to send when trunk is challenged for the realm",
+        "instance": "[Required] BYOC Cloud public SIP IP addresses"
     }
 }
