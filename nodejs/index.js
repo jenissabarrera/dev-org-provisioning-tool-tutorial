@@ -97,8 +97,8 @@ function getEdgeSite() {
 // This function will create a site using the location value and edge group value saved to a variable earlier
 function createSite(awsItem) {
     const today = new Date();
-    let startTime = today.toISOString(today.setHours(10,0,0,0)).substring(0,23);
-    let endTime =  today.toISOString(today.setHours(13,0,0,0)).substring(0,23); 
+    let startTime = today.toISOString(today.setHours(10,0,0,0)).substring(0,23); // default is 2AM
+    let endTime =  today.toISOString(today.setHours(13,0,0,0)).substring(0,23); // default is 5AM
     const body = {
         name: inputTemplate.site.name, // Ex: My Site Name
         primarySites: [{
@@ -114,8 +114,8 @@ function createSite(awsItem) {
         edgeAutoUpdateConfig: {
             timeZone: inputTemplate.site.timeZone, // Ex: America/New_York
             rrule: 'FREQ=DAILY',
-            start: startTime, // start and end date time is represented as an ISO-8601 string without a timezone. 
-            end: endTime      // example: yyyy-MM-ddTHH:mm:ss.SSS
+            start: startTime,   // Start and end date time is represented as an ISO-8601 string without a timezone. 
+            end: endTime        // example: yyyy-MM-ddTHH:mm:ss.SSS
         },
         location: locationInfo,
         ntpSettings: {
