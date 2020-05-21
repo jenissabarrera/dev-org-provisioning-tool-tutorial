@@ -30,7 +30,17 @@ steps:
 
 - title: Check BYOC Feature
   content: |
-    Get the list of products available for the org used by calling [getAuthorizationProducts()](/api/rest/client-libraries/javascript/AuthorizationApi.html#organizationproductentitylisting_getauthorizationproducts__) function of Authorization API and check if the org has BYOC capability. If the org is BYOC capable, it will proceed to create location function.  Please take note that only BYOC enabled orgs can proceed.
+    Get the list of products available for the org used by calling [getAuthorizationProducts()](/api/rest/client-libraries/javascript/AuthorizationApi.html#organizationproductentitylisting_getauthorizationproducts__) function of Authorization API and check if the org has BYOC capability.
+    
+    After onboarding enables the BYOC feature, managed telephony resources are created for the organization. These resource will be used to configure the BYOC feature. These resources are managed by Genesys and are used by both the BYOC and PCV feature.
+
+    A list of managed objects visible in the Telephony Admin:
+
+    1.Edges - one or more virtual-edge-i-xxxxxxxxxx
+    2.EdgeGroup - PureCloud Voice
+    3.Site - PureCloud Voice - AWS
+    
+    If the org is BYOC capable, it will proceed to create location function.  Please take note that only BYOC enabled orgs can proceed. If the user wants to enable BYOC in their org, please contact user's sales representative or account manager.
 
 - title: Create Location
   content: |
@@ -44,7 +54,7 @@ steps:
 
 - title: Create Trunk
   content: |
-    Create a trunk base setting object from the user input credentials from the JSON file by calling [postTelephonyProvidersEdgesTrunkbasesettings()](/api/rest/client-libraries/javascript/TelephonyProvidersEdgeApi.html#trunkbase_posttelephonyprovidersedgestrunkbasesettings_body_) function of Telephony Providers Edge API. Once the trunk is successfully created, it will proceed to siteOutboundRoutes function. 
+    Create a trunk base setting object from the user input credentials from the JSON file by calling [postTelephonyProvidersEdgesTrunkbasesettings()](/api/rest/client-libraries/javascript/TelephonyProvidersEdgeApi.html#trunkbase_posttelephonyprovidersedgestrunkbasesettings_body_) function of Telephony Providers Edge API. Once the trunk is successfully created, it will proceed to siteOutboundRoutes function. Please take note that sipServers value from the JSON file should be unique in the entire org.
 
 - title: Set Outbound Route
   content: |
