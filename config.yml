@@ -38,7 +38,7 @@ steps:
 
 - title: Create Site
   content: |
-    To create a new site, there are few pieces of information required before making an API call. First, is the location information which is saved in a global variable from earlier step. Second, is a default edge group which is found in PureCloud Admin > Telephony > Edge Groups. Third is the edge software update schedule, and in this tutorial using the default schedule window of 2AM to 5AM. Read more about scheduling automatic updates for the edge software [here](https://help.mypurecloud.com/articles/schedule-automatic-updates-edge-software/).
+    To create a new site, there are few pieces of information required before making an API call. First, is the location information which is saved in a global variable from earlier step. Second, is the default edge group which is found in PureCloud Admin > Telephony > Edge Groups. Third, is the edge software update schedule and in this tutorial using the default schedule window of 2AM to 5AM. Read more about scheduling automatic updates for the edge software [here](https://help.mypurecloud.com/articles/schedule-automatic-updates-edge-software/).
 
     Get the default edge group by calling [getTelephonyProvidersEdgesSites()](/api/rest/client-libraries/javascript/TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSites) function and look for "PureCloud Voice – AWS". Save the returned data and proceed to creating a new site with [postTelephonyProvidersEdgesSites()](/api/rest/client-libraries/javascript/TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSites) function. Both functions are under telephony providers edge API.
 
