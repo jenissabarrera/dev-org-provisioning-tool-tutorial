@@ -17,7 +17,7 @@ const CLIENT_ID = process.env.GENESYS_CLIENT_ID;
 const CLIENT_SECRET = process.env.GENESYS_CLIENT_SECRET;
 
 // Authenticate with genesys cloud
-client.loginClientCredentialsGrant(CLIENT_ID, CLIENT_SECRET)
+client.loginClientCredentialsGrant(process.env.GENESYS_CLIENT_ID, process.env.GENESYS_CLIENT_SECRET)
     .then(() => {
         console.log('Authentication successful!');
         checkBYOC();

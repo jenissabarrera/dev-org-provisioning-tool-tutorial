@@ -26,7 +26,7 @@ steps:
 
 - title: Authentication
   content: |
-    Genesys Cloud will verify user's credentials using Client Credential authentication. Once the validation is successful, it will proceed with the succeeding process.
+    The app will be authorized using OAuth Client Credentials. Once the validation is successful, it will proceed with the succeeding process.
 
 - title: Check BYOC Feature
   content: |
